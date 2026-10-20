@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tejido — Ropa de diario</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0f4;--surface:#fff;--ink:#1b2433;--muted:#5b6578;--accent:#2f4bff;--on-accent:#fff;--line:#d5d9e2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a28;--surface:#1d2536;--ink:#eef0f6;--muted:#a3adc2;--accent:#7f93ff;--on-accent:#101528;--line:#2e3850;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141a28;--surface:#1d2536;--ink:#eef0f6;--muted:#a3adc2;--accent:#7f93ff;--on-accent:#101528;--line:#2e3850;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;margin:0;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px clamp(16px,5vw,56px)}
+.logo{font:800 24px "Bricolage Grotesque",sans-serif;text-decoration:none}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{background:var(--accent);color:var(--on-accent);border:0;border-radius:999px;padding:11px 20px;font:500 15px "DM Sans",sans-serif;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{padding:clamp(36px,8vw,96px) clamp(16px,5vw,56px) 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(44px,9vw,112px);font-weight:800;letter-spacing:-.035em}
+.hero p{max-width:44ch;color:var(--muted);font-size:18px;margin:22px 0 28px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.stack{position:relative;aspect-ratio:1;max-width:440px;width:100%;justify-self:center}
+.stack div{position:absolute;border-radius:28px;display:grid;place-items:center}
+.stack svg{width:62%;height:62%}
+.s1{inset:0 22% 22% 0;background:#2f4bff;transform:rotate(-4deg);color:#dfe4ff}
+.s2{inset:30% 0 0 30%;background:#e6b84a;transform:rotate(5deg);color:#3a2d0a}
+section{padding:40px clamp(16px,5vw,56px)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.head h2{font-size:clamp(30px,5vw,48px);font-weight:800;letter-spacing:-.02em}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;font:500 14px "DM Sans",sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.card{background:var(--surface);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{aspect-ratio:1/1.05;display:grid;place-items:center}
+.thumb svg{width:58%;height:58%}
+.info{padding:16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info h3{font-size:19px;font-weight:500}
+.info small{color:var(--muted)}
+.buy{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.price{font:800 20px "Bricolage Grotesque",sans-serif}
+.add{background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:9px 16px;font:500 14px "DM Sans",sans-serif;cursor:pointer}
+.promo{margin:24px clamp(16px,5vw,56px);background:var(--accent);color:var(--on-accent);border-radius:28px;padding:clamp(28px,6vw,64px);display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap}
+.promo h2{font-size:clamp(28px,5vw,52px);font-weight:800;max-width:16ch}
+.promo p{margin:8px 0 0;max-width:40ch}
+.promo .btn{background:var(--on-accent);color:var(--accent)}
+footer{padding:40px clamp(16px,5vw,56px) 56px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:32px}
+#cart{position:fixed;right:0;top:0;bottom:0;width:min(380px,100%);background:var(--surface);box-shadow:-8px 0 30px rgba(0,0,0,.25);padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(105%);transition:transform .25s;z-index:20;display:flex;flex-direction:column}
+#cart.open{transform:none}
+#cart ul{list-style:none;padding:0;margin:16px 0;flex:1;overflow:auto}
+#cart li{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+#cart li button{background:none;border:0;color:var(--muted);cursor:pointer;font:inherit}
+.total{display:flex;justify-content:space-between;font:800 22px "Bricolage Grotesque",sans-serif;margin-bottom:14px}
+@media (max-width:760px){.hero{grid-template-columns:1fr}nav .hide{display:none}}
+@media (prefers-reduced-motion:reduce){#cart{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">Tejido</a>
+  <nav>
+    <a class="hide" href="#coleccion">Colección</a>
+    <a class="hide" href="#oferta">Oferta</a>
+    <button class="btn ghost" id="open-cart" aria-label="Abrir carrito">Carrito (<span id="count">0</span>)</button>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div>
+      <h1>Ropa para todos tus días.</h1>
+      <p>Prendas cómodas, de buena tela y con precios justos. Elige tu talla, agrégala al carrito y listo.</p>
+      <div class="row">
+        <a class="btn" href="#coleccion">Ver la colección</a>
+        <a class="btn ghost" href="#oferta">Ver la oferta</a>
+      </div>
+    </div>
+    <div class="stack" aria-hidden="true">
+      <div class="s1"><svg viewBox="0 0 64 64" fill="currentColor"><use href="#i-polera"/></svg></div>
+      <div class="s2"><svg viewBox="0 0 64 64" fill="currentColor"><use href="#i-chaqueta"/></svg></div>
+    </div>
+  </div>
+
+  <section id="coleccion">
+    <div class="head">
+      <h2>Colección</h2>
+      <div class="filters" role="group" aria-label="Filtrar por categoría" id="filters"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <div class="promo" id="oferta">
+    <div>
+      <h2>Lleva 3 prendas y paga 2</h2>
+      <p>Válido en poleras y pantalones hasta fin de mes.</p>
+    </div>
+    <a class="btn" href="#coleccion">Elegir prendas</a>
+  </div>
+</main>
+
+<footer>
+  <span>© 2026 Tejido. Todos los derechos reservados.</span>
+  <span>Envíos y cambios gratis en tu primera compra.</span>
+</footer>
+
+<aside id="cart" aria-label="Carrito">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <h2 style="font-size:28px">Tu carrito</h2>
+    <button class="chip" id="close-cart">Cerrar</button>
+  </div>
+  <ul id="items"></ul>
+  <div class="total"><span>Total</span><span id="total">$0</span></div>
+  <button class="btn" id="checkout">Finalizar compra</button>
+</aside>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-polera" viewBox="0 0 64 64"><path d="M22 8l-16 9 6 12 6-3v29h24V26l6 3 6-12-16-9c-1 4-5 7-10 7s-9-3-10-7z"/></symbol>
+  <symbol id="i-pantalon" viewBox="0 0 64 64"><path d="M18 6h28l4 52H35l-3-30-3 30H14z"/></symbol>
+  <symbol id="i-chaqueta" viewBox="0 0 64 64"><path d="M24 7l-14 8-4 36 10 2 2-24h28l2 24 10-2-4-36-14-8-8 8z"/></symbol>
+  <symbol id="i-vestido" viewBox="0 0 64 64"><path d="M24 6h6c0 3 4 3 4 0h6l-2 16 12 36H14l12-36z"/></symbol>
+</svg>
+
+<script>
+const P=[
+{n:"Polera básica blanca",c:"Poleras",p:25,i:"polera",bg:"#dfe4ff",fg:"#2f4bff",t:"Algodón suave"},
+{n:"Polera rayas marino",c:"Poleras",p:29,i:"polera",bg:"#1b2a5c",fg:"#e6edff",t:"Corte regular"},
+{n:"Pantalón jean recto",c:"Pantalones",p:59,i:"pantalon",bg:"#c3d0f0",fg:"#27407f",t:"Tiro medio"},
+{n:"Pantalón cargo arena",c:"Pantalones",p:64,i:"pantalon",bg:"#e8d9b8",fg:"#6b5320",t:"Seis bolsillos"},
+{n:"Chaqueta cortaviento",c:"Abrigos",p:89,i:"chaqueta",bg:"#e6b84a",fg:"#3a2d0a",t:"Impermeable ligera"},
+{n:"Casaca de lana",c:"Abrigos",p:119,i:"chaqueta",bg:"#3b4a6b",fg:"#dfe6f7",t:"Para el frío"},
+{n:"Vestido de verano",c:"Vestidos",p:69,i:"vestido",bg:"#f4c9c0",fg:"#8a2e1f",t:"Tela fresca"},
+{n:"Vestido largo azul",c:"Vestidos",p:79,i:"vestido",bg:"#2f4bff",fg:"#dfe4ff",t:"Con cinturón"}
+];
+const $=s=>document.querySelector(s);
+let cat="Todo",cart=[];
+const cats=["Todo",...new Set(P.map(x=>x.c))];
+function drawFilters(){
+  $("#filters").innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${c}">${c}</button>`).join("");
+}
+function drawGrid(){
+  $("#grid").innerHTML=P.map((x,k)=>({x,k})).filter(o=>cat==="Todo"||o.x.c===cat).map(({x,k})=>`
+  <article class="card">
+    <div class="thumb" style="background:${x.bg};color:${x.fg}"><svg viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><use href="#i-${x.i}"/></svg></div>
+    <div class="info"><h3>${x.n}</h3><small>${x.t}</small>
+    <div class="buy"><span class="price">$${x.p}</span><button class="add" data-k="${k}">Agregar</button></div></div>
+  </article>`).join("");
+}
+function drawCart(){
+  $("#count").textContent=cart.length;
+  $("#items").innerHTML=cart.length?cart.map((k,j)=>`<li><span>${P[k].n}</span><span>$${P[k].p} <button data-r="${j}" aria-label="Quitar">✕</button></span></li>`).join(""):"<li>Tu carrito está vacío. Agrega una prenda de la colección.</li>";
+  $("#total").textContent="$"+cart.reduce((s,k)=>s+P[k].p,0);
+}
+document.addEventListener("click",e=>{
+  const t=e.target;
+  if(t.dataset.c){cat=t.dataset.c;drawFilters();drawGrid()}
+  if(t.dataset.k){cart.push(+t.dataset.k);drawCart();t.textContent="Agregada";setTimeout(()=>t.textContent="Agregar",900)}
+  if(t.dataset.r){cart.splice(+t.dataset.r,1);drawCart()}
+  if(t.id==="open-cart")$("#cart").classList.add("open");
+  if(t.id==="close-cart")$("#cart").classList.remove("open");
+  if(t.id==="checkout")alert(cart.length?"Gracias por tu compra. Esta es una página de demostración.":"Agrega al menos una prenda al carrito.");
+});
+drawFilters();drawGrid();drawCart();
+</script>
+</body>
+</html>

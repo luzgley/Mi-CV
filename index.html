@@ -4,120 +4,128 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CV - Luz Gleny Condori Rosas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin:0; padding:0; }
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #a18cd1, #84fab0, #8fd3f4);
-    background-size: 300% 300%;
-    animation: fondo 8s ease infinite;
-    padding: 15px;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #eceae3;
+    color: #2b2b2b;
+    padding: 25px 15px;
 }
-@keyframes fondo { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-
 .contenedor {
-    max-width: 920px;
-    margin: 20px auto;
-    background: white;
+    max-width: 880px;
+    margin: auto;
+    background: #fffdf9;
     display: flex;
-    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-    border: 3px solid white;
 }
-
-/* LADO IZQUIERDO - BIEN LLAMATIVO */
+/* LADO IZQUIERDO ELEGANTE */
 .lateral {
-    background: linear-gradient(180deg, #7c3aed, #db2777, #f97316);
-    color: white;
+    background: #1a1a1a;
+    color: #f5f1e8;
     width: 36%;
-    padding: 30px 20px;
-    text-align: center;
+    padding: 40px 28px;
 }
 .foto-perfil {
-    width: 160px; height: 160px;
+    width: 150px; height: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid white;
-    outline: 4px solid #facc15;
+    border: 2px solid #c9a86a;
     display: block;
-    margin: 5px auto 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-.nombre-lateral {
-    font-size: 20px; font-weight: 900; line-height: 1.2;
-}
-.sub-lateral {
-    background: #facc15; color: #7c3aed;
-    padding: 6px 10px; border-radius: 20px;
-    font-size: 12px; font-weight: 900;
-    display: inline-block; margin: 10px 0 5px;
+    margin: 0 auto 22px;
+    padding: 4px;
 }
 .lateral h2 {
-    text-align: left; font-size: 16px;
-    background: rgba(255,255,255,0.22);
-    padding: 8px 12px; border-radius: 10px;
-    margin: 20px 0 12px;
-}
-.dato {
-    background: rgba(255,255,255,0.18);
-    padding: 10px; border-radius: 12px;
-    margin-bottom: 8px; text-align: left; font-size: 14px;
-    border: 1px solid rgba(255,255,255,0.3);
-}
-.dato b { font-size: 11px; color: #fde68a; letter-spacing: 1px; }
-.skill {
-    background: white; color: #7c3aed;
-    padding: 9px; border-radius: 20px;
-    font-size: 13px; font-weight: 800;
-    margin: 6px 0; display: block;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
-.skill:nth-child(even){ background: #facc15; color: #831843; }
-
-/* LADO DERECHO */
-.contenido { width: 64%; padding: 32px 28px; }
-.titulo-grande {
-    font-size: 34px; line-height: 1;
-    background: linear-gradient(90deg, #7c3aed, #db2777, #f97316);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-}
-.carrera {
-    background: linear-gradient(90deg, #7c3aed, #db2777);
-    color: white; padding: 9px 15px;
-    border-radius: 20px; font-size: 13px; font-weight: bold;
-    display: inline-block; margin: 12px 0 5px;
-    box-shadow: 0 5px 15px rgba(219,39,119,0.4);
-}
-h2 {
-    font-size: 19px; margin: 22px 0 10px;
-    color: #7c3aed; border-left: 6px solid #f97316;
-    padding-left: 10px;
-}
-p { line-height: 1.7; font-size: 15px; color: #334155; }
-.caja {
-    background: #fdf4ff; border: 2px solid #f0abfc;
-    padding: 14px; border-radius: 14px;
-}
-.caja b { color: #7c3aed; }
-.lista { list-style: none; }
-.lista li {
-    background: #fff7ed; border: 1px solid #fed7aa;
-    padding: 9px 12px; border-radius: 10px; margin: 6px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    color: #c9a86a;
+    border-bottom: 1px solid #3a3a3a;
+    padding-bottom: 10px;
+    margin: 28px 0 14px;
     font-weight: 600;
 }
-.etiqueta {
-    display: inline-block; padding: 7px 13px; border-radius: 20px;
-    font-size: 13px; font-weight: 800; margin: 3px; color: white;
+.dato { margin-bottom: 14px; font-size: 14px; line-height: 1.6; }
+.dato b {
+    font-size: 10px; letter-spacing: 1.5px;
+    color: #c9a86a; display: block; margin-bottom: 3px;
 }
-.e1{background:#7c3aed} .e2{background:#db2777} .e3{background:#f97316} .e4{background:#0891b2}
-.corazon { text-align:center; margin-top:20px; font-size:13px; color:#db2777; font-weight:bold; }
-
+.linea-dorada { height: 1px; background: #c9a86a; margin: 10px 0; opacity: .5; }
+.skill {
+    border: 1px solid #4a4a4a;
+    padding: 8px 10px;
+    font-size: 13px;
+    letter-spacing: .5px;
+    margin: 7px 0;
+    text-align: center;
+    color: #f5f1e8;
+}
+.skill span { color: #c9a86a; margin-right: 6px; }
+.frase {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #d8c9a3;
+    text-align: center;
+    margin-top: 25px;
+    line-height: 1.6;
+}
+/* LADO DERECHO */
+.contenido { width: 64%; padding: 45px 40px; }
+.apellido {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px; line-height: 1;
+    color: #1a1a1a; font-weight: 700;
+}
+.apellido em { font-style: normal; color: #c9a86a; }
+.sub {
+    font-size: 12px; letter-spacing: 2px;
+    color: #8a8a8a; margin: 10px 0 5px;
+    text-transform: uppercase; font-weight: 600;
+}
+.linea {
+    width: 60px; height: 3px; background: #c9a86a; margin: 15px 0 25px;
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px; color: #1a1a1a;
+    letter-spacing: 1px; margin: 26px 0 12px;
+    display: flex; align-items: center; gap: 10px;
+}
+h2::after { content:""; flex:1; height:1px; background:#e8ddd0; }
+p { line-height: 1.8; font-size: 14.5px; color: #4a4a4a; }
+.caja {
+    border-left: 3px solid #c9a86a;
+    background: #faf7f0;
+    padding: 14px 16px;
+}
+.caja b { color: #1a1a1a; }
+.caja small { color: #8a8a8a; }
+.lista { list-style: none; }
+.lista li {
+    padding: 9px 0; border-bottom: 1px solid #eee6d8;
+    font-size: 14.5px; color: #4a4a4a;
+}
+.lista li b { color: #c9a86a; margin-right: 8px; }
+.etiquetas { margin-top: 18px; }
+.etiquetas span {
+    border: 1px solid #c9a86a; color: #8a6a2e;
+    padding: 6px 13px; font-size: 12px;
+    letter-spacing: 1px; display: inline-block;
+    margin: 3px; font-weight: 600;
+}
+.firma {
+    margin-top: 30px; text-align: right;
+    font-family: 'Playfair Display', serif;
+    font-style: italic; color: #c9a86a; font-size: 16px;
+}
 @media(max-width:650px){
     .contenedor{flex-direction:column}
     .lateral,.contenido{width:100%}
+    .apellido{font-size:32px}
 }
 </style>
 </head>
@@ -126,64 +134,62 @@ p { line-height: 1.7; font-size: 15px; color: #334155; }
 <div class="contenedor">
 <aside class="lateral">
     <img src="WhatsApp Image 2026-11-16 at 3.04.55 PM.jpeg" alt="Mi foto" class="foto-perfil">
-    <div class="nombre-lateral">LUZ GLENY<br>CONDORI ROSAS</div>
-    <div class="sub-lateral">✨ ¡LISTA PARA TRABAJAR! ✨</div>
 
-    <h2>📱 DATOS PERSONALES</h2>
-    <div class="dato"><b>📧 CORREO</b><br>condorirosasgleny@gmail.com</div>
-    <div class="dato"><b>📞 TELÉFONO</b><br>982300091</div>
-    <div class="dato"><b>📍 DIRECCIÓN</b><br>Distrito de Santa Lucía - Puno</div>
+    <h2>CONTACTO</h2>
+    <div class="dato"><b>CORREO</b>condorirosasgleny@gmail.com</div>
+    <div class="dato"><b>TELÉFONO</b>982 300 091</div>
+    <div class="dato"><b>UBICACIÓN</b>Distrito de Santa Lucía - Puno</div>
 
-    <h2>💪 MIS HABILIDADES</h2>
-    <span class="skill">⭐ PUNTUALIDAD</span>
-    <span class="skill">🔥 TRABAJO BAJO PRESIÓN</span>
-    <span class="skill">💙 COMPROMISO TOTAL</span>
-    <span class="skill">✅ ÉTICA Y RESPONSABILIDAD</span>
-    <span class="skill">🚀 APRENDO SÚPER RÁPIDO</span>
-    <span class="skill">🤝 TRABAJO EN EQUIPO</span>
+    <h2>HABILIDADES</h2>
+    <div class="skill"><span>—</span> Puntualidad</div>
+    <div class="skill"><span>—</span> Trabajo bajo presión</div>
+    <div class="skill"><span>—</span> Compromiso con el trabajo</div>
+    <div class="skill"><span>—</span> Ética y responsabilidad</div>
+    <div class="skill"><span>—</span> Aprendo rápido</div>
+    <div class="skill"><span>—</span> Trabajo en equipo</div>
 
-    <h2>🌟 EXTRA</h2>
-    <p style="text-align:left;font-size:14px;">✔️ Español - Nativo<br>✔️ Disponibilidad inmediata<br>✔️ Muchas ganas de aprender</p>
+    <h2>IDIOMA</h2>
+    <div class="dato"><b>ESPAÑOL</b>Nativo</div>
+
+    <div class="frase">"Responsable, puntual y con muchas ganas de aprender."</div>
 </aside>
 
 <main class="contenido">
-    <h1 class="titulo-grande">Luz Gleny<br>Condori Rosas</h1>
-    <div class="carrera">💻 Arquitectura de Plataformas y Servicios de TI</div>
-    <p style="font-size:13px;color:#db2777;font-weight:bold;">✦ Estudiante de Tecnología ✦ Responsable ✦ Creativa ✦</p>
+    <div class="sub">Curriculum Vitae</div>
+    <h1 class="apellido">Luz Gleny<br><em>Condori Rosas</em></h1>
+    <div class="linea"></div>
+    <p style="font-size:13px;letter-spacing:1.5px;color:#8a8a8a;font-weight:600;">ARQUITECTURA DE PLATAFORMAS Y SERVICIOS DE TI</p>
 
-    <h2>👩‍💻 PERFIL PERSONAL</h2>
+    <h2>Perfil Personal</h2>
     <p>Soy estudiante de Arquitectura de Plataformas y Servicios de Tecnología de la Información, responsable, puntual y con muchas ganas de aprender. Me interesa la tecnología, el desarrollo de sistemas y las páginas web. Busco una oportunidad para poner en práctica lo que estoy aprendiendo y seguir creciendo.</p>
 
-    <h2>🎓 FORMACIÓN ACADÉMICA</h2>
+    <h2>Formación Académica</h2>
     <div class="caja">
         <b>Arquitectura de Plataformas y Servicios de Tecnología de la Información</b><br>
         Instituto de Educación Superior Tecnológico Público "Santa Lucía"<br>
-        <small>📍 Santa Lucía - Puno</small>
+        <small>Santa Lucía - Puno</small>
     </div>
 
-    <h2>💻 CONOCIMIENTOS</h2>
+    <h2>Conocimientos</h2>
     <ul class="lista">
-        <li>🖥️ Manejo de herramientas informáticas</li>
-        <li>🗄️ Bases de datos SQL</li>
-        <li>🌐 Desarrollo de páginas web</li>
-        <li>⌨️ Programación básica</li>
+        <li><b>01</b> Manejo de herramientas informáticas</li>
+        <li><b>02</b> Bases de datos SQL</li>
+        <li><b>03</b> Desarrollo de páginas web</li>
+        <li><b>04</b> Programación básica</li>
     </ul>
 
-    <h2>💼 EXPERIENCIA</h2>
-    <div class="caja">✨ Prácticas - En formación profesional ✨</div>
+    <h2>Experiencia</h2>
+    <div class="caja">Prácticas — En formación profesional</div>
 
-    <h2>🎯 OBJETIVO PROFESIONAL</h2>
+    <h2>Objetivo Profesional</h2>
     <p>Seguir aprendiendo y desarrollar mis habilidades tecnológicas para crecer profesionalmente.</p>
 
-    <br>
-    <span class="etiqueta e1">HTML</span>
-    <span class="etiqueta e2">CSS</span>
-    <span class="etiqueta e3">SQL</span>
-    <span class="etiqueta e4">PÁGINAS WEB</span>
+    <div class="etiquetas">
+        <span>HTML</span><span>CSS</span><span>SQL</span><span>PÁGINAS WEB</span>
+    </div>
 
-    <div class="corazon">💖 ¡Gracias por ver mi CV! 💖</div>
+    <div class="firma">— Luz Gleny Condori Rosas</div>
 </main>
 </div>
 </body>
-</html></body>
-</html>
+</html></html>
